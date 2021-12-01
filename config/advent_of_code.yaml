@@ -1,0 +1,6 @@
+services:
+  _defaults:
+    public: true
+
+  advent_of_code.2021.1_1:
+    class: App\Services\AdventOfCode2021_1_1
