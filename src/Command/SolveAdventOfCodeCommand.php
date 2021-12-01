@@ -57,6 +57,6 @@ final class SolveAdventOfCodeCommand extends Command
         /** @var AdventOfCodeInterface $adventOfCode */
         $adventOfCode = $container->get($serviceName);
 
-        return $adventOfCode->solve() ? Command::SUCCESS : Command::FAILURE;
+        return $adventOfCode->solve($year, $day) ? Command::SUCCESS : Command::FAILURE;
     }
 }
