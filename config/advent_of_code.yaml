@@ -19,3 +19,9 @@ services:
     arguments:
       - '@logger'
       - '%kernel.project_dir%'
+
+  advent_of_code.2021.2_2:
+    class: App\Services\AdventOfCode2021_2_2
+    arguments:
+      - '@logger'
+      - '%kernel.project_dir%'
