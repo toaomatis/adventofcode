@@ -12,7 +12,6 @@ final class AdventOfCode2021_3_1 extends AbstractAdventOfCode
     public function solve(string $year, string $day): bool
     {
         $puzzleInput = $this->getPuzzleInput($year, $day);
-        $this->logger->debug(sprintf('Found %d lines', count($puzzleInput)));
         $diagnosticReport = $this->getBitOccurrences($puzzleInput);
         $gammaRate = 0;
         $epsilonRate = 0;

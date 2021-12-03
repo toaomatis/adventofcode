@@ -12,7 +12,6 @@ final class AdventOfCode2021_1_1 extends AbstractAdventOfCode
     public function solve(string $year, string $day): bool
     {
         $puzzleInput = $this->getPuzzleInput($year, $day);
-        $this->logger->debug(sprintf('Found %d lines', count($puzzleInput)));
         $lastMeasurement = null;
         $measurementLargerCount = 0;
         foreach ($puzzleInput as $measurement) {

@@ -28,6 +28,7 @@ abstract class AbstractAdventOfCode implements AdventOfCodeInterface
     {
         $puzzleInputPath = $this->projectDir . DIRECTORY_SEPARATOR . 'inputs' . DIRECTORY_SEPARATOR . $year . DIRECTORY_SEPARATOR . $day . '.txt';
         $puzzleInput = file($puzzleInputPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $this->logger->debug(sprintf('Found %d lines', count($puzzleInput)));
 
         return $puzzleInput;
     }

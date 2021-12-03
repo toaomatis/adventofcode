@@ -15,7 +15,6 @@ final class AdventOfCode2021_1_2 extends AbstractAdventOfCode
     {
         /* This puzzle reuses the same input as 1_1 */
         $puzzleInput = $this->getPuzzleInput($year, '1_1');
-        $this->logger->debug(sprintf('Found %d lines', count($puzzleInput)));
         $lastMeasurement = null;
         $measurementLargerCount = 0;
         $measurements = [];
