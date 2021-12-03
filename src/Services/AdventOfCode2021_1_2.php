@@ -9,9 +9,9 @@ final class AdventOfCode2021_1_2 extends AbstractAdventOfCode
     /**
      * @param string $year
      * @param string $day
-     * @return bool
+     * @return int
      */
-    public function solve(string $year, string $day): bool
+    public function solve(string $year, string $day): int
     {
         /* This puzzle reuses the same input as 1_1 */
         $puzzleInput = $this->getPuzzleInput($year, '1_1');
@@ -34,7 +34,7 @@ final class AdventOfCode2021_1_2 extends AbstractAdventOfCode
         }
         $this->logger->info(sprintf('Found %d larger measurements', $measurementLargerCount));
 
-        return true;
+        return $measurementLargerCount;
     }
 
     /**

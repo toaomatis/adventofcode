@@ -7,9 +7,9 @@ final class AdventOfCode2021_1_1 extends AbstractAdventOfCode
     /**
      * @param string $year
      * @param string $day
-     * @return bool
+     * @return int
      */
-    public function solve(string $year, string $day): bool
+    public function solve(string $year, string $day): int
     {
         $puzzleInput = $this->getPuzzleInput($year, $day);
         $lastMeasurement = null;
@@ -25,6 +25,6 @@ final class AdventOfCode2021_1_1 extends AbstractAdventOfCode
         }
         $this->logger->info(sprintf('Found %d larger measurements', $measurementLargerCount));
 
-        return true;
+        return $measurementLargerCount;
     }
 }

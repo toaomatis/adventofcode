@@ -7,7 +7,7 @@ interface AdventOfCodeInterface
     /**
      * @param string $year
      * @param string $day
-     * @return bool
+     * @return int
      */
-    public function solve(string $year, string $day): bool;
+    public function solve(string $year, string $day): int;
 }

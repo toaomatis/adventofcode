@@ -56,7 +56,10 @@ final class SolveAdventOfCodeCommand extends Command
         $container = $this->kernel->getContainer();
         /** @var AdventOfCodeInterface $adventOfCode */
         $adventOfCode = $container->get($serviceName);
+        $answer = $adventOfCode->solve($year, $day);
+        $this->logger->info(sprintf('Solved %s, answer is %d', $serviceName, $answer),
+            ['year' => $year, 'day' => $day]);
 
-        return $adventOfCode->solve($year, $day) ? Command::SUCCESS : Command::FAILURE;
+        return Command::SUCCESS;
     }
 }

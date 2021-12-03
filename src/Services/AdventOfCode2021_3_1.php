@@ -7,9 +7,9 @@ final class AdventOfCode2021_3_1 extends AbstractAdventOfCode
     /**
      * @param string $year
      * @param string $day
-     * @return bool
+     * @return int
      */
-    public function solve(string $year, string $day): bool
+    public function solve(string $year, string $day): int
     {
         $puzzleInput = $this->getPuzzleInput($year, $day);
         $diagnosticReport = $this->getBitOccurrences($puzzleInput);
@@ -28,7 +28,7 @@ final class AdventOfCode2021_3_1 extends AbstractAdventOfCode
         $this->logger->info(sprintf('Found %d epsilon rate', $epsilonRate));
         $this->logger->info(sprintf('Found %d multiplied', $gammaRate * $epsilonRate));
 
-        return true;
+        return ($gammaRate * $epsilonRate);
     }
 
     /**
