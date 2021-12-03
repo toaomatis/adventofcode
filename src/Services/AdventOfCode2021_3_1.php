@@ -13,7 +13,7 @@ final class AdventOfCode2021_3_1 extends AbstractAdventOfCode
     {
         $puzzleInput = $this->getPuzzleInput($year, $day);
         $this->logger->debug(sprintf('Found %d lines', count($puzzleInput)));
-        $diagnosticReport = $this->toTwoDimensionalArrayAndTranspose($puzzleInput);
+        $diagnosticReport = $this->getBitOccurrences($puzzleInput);
         $gammaRate = 0;
         $epsilonRate = 0;
         foreach ($diagnosticReport as $occurrences) {
@@ -36,23 +36,23 @@ final class AdventOfCode2021_3_1 extends AbstractAdventOfCode
      * @param array<int, string> $lines
      * @return array<int, array<int, int>>
      */
-    private function toTwoDimensionalArrayAndTranspose(array $lines): array
+    private function getBitOccurrences(array $lines): array
     {
-        $output = [];
-        foreach ($lines as $lineIndex => $line) {
+        $bitOccurrences = [];
+        foreach ($lines as $line) {
             $characters = str_split($line);
             foreach ($characters as $characterIndex => $character) {
                 $value = (int)$character;
-                if (array_key_exists($characterIndex, $output) === false) {
-                    $output[$characterIndex] = [
+                if (array_key_exists($characterIndex, $bitOccurrences) === false) {
+                    $bitOccurrences[$characterIndex] = [
                         0 => 0,
                         1 => 0,
                     ];
                 }
-                $output[$characterIndex][$value] = $output[$characterIndex][$value] + 1;
+                $bitOccurrences[$characterIndex][$value] = $bitOccurrences[$characterIndex][$value] + 1;
             }
         }
 
-        return $output;
+        return $bitOccurrences;
     }
 }
