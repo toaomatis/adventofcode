@@ -25,8 +25,8 @@ class AdventOfCodeTest extends TestCase
     public function testAdventOfCodeData(): array
     {
         return [
-            ['2021', '3_1', 198],
             ['2021', '3_2', 230],
+            ['2021', '3_1', 198],
         ];
     }
 
